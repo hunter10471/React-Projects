@@ -51,7 +51,7 @@ export const Footer = () => {
 
   return (
     <>
-    <div className='flex w-full flex-wrap py-5 px-2 items-center justify-around bg-gradient-to-br from-slate-900 to-slate-700 text-primary'>
+    <div id='footer' className='flex w-full flex-wrap py-5 px-2 items-center justify-around bg-gradient-to-br from-slate-900 to-slate-700 text-primary'>
     <div className='flex flex-col relative m-10 mt-20'>
         <SendIcon fontSize='large' className='absolute top-[-20px] rotate-[-35deg] left-[50%] ' />
         <fieldset className=' z-[10] h-full py-8 text-primary' >
