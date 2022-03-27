@@ -115,7 +115,7 @@ export const Footer = () => {
       </div>
     </div>
     
-      <div className='text-center bg-slate-700 text-primary'>All rights reserved by the respective owner of the website ®</div>
+      <div className='text-center text-xs bg-slate-700 text-primary'>All rights reserved by the respective owner of the website ®</div>
       </>
   )
 }

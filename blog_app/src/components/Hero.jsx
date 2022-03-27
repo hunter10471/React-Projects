@@ -17,7 +17,7 @@ export const Hero = ({blogs}) => {
       <span className='sm:text-lg md:text-xl font-heading tracking-widest italic text-center opacity-60 text-primary px-5 my-10 sm:my-20'>
         The Best Connections Worldwide <PublicIcon className='bg-[#1a1d1d] rounded-[50%] shadow-primary shadow-lg hover:animate-spin ' sx={{fontSize:'48px'}} /> Coming soon! </span>
       </div>
-      <button onClick={()=>{blogs.current.scrollIntoView()}} className='text-primary font-heading flex font-bold items-center rounded-sm text-lg md:text-xl transition-all duration-200 tracking-widest absolute bottom-20 bg-button hover:bg-secondary px-[3rem] md:px-20 py-2 shadow-2xl shadow-secondary'> <span className="flex h-3 w-3"></span>EXPLORE</button>
+      <button onClick={()=>{blogs.current.scrollIntoView()}} className='text-primary font-heading flex font-bold items-center rounded-sm text-lg md:text-xl transition-all duration-200 tracking-widest absolute bottom-20 bg-button hover:bg-secondary px-[3rem] md:px-20 py-2 shadow-2xl shadow-secondary'> EXPLORE</button>
     </div>
   )
 }

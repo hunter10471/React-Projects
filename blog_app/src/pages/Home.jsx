@@ -9,7 +9,7 @@ export const Home = () => {
   const blogs = useRef()
   const [ref, inView] = useInView({
       triggerOnce:true,
-      rootMargin:'-100px 0px'
+      rootMargin:'-30px 0px'
   })
   return (
    <div className="overflow-x-hidden w-full h-full bg-primary ">

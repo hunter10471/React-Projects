@@ -21,7 +21,7 @@ export const Blog = () => {
         <div className='mt-[8rem] p-2 flex bg-gradient-to-tl flex-wrap lg:flex-nowrap'>
       <div className='flex flex-col mb-20'>
       <img className=' w-full max-h-[500px] object-cover object-bottom self-center rounded-sm shadow-md shadow-black' src={element.img} alt="" />
-      <h1 className='text-xl sm:text-2xl  md:text-3xl  font-heading font-extrabold tracking-wide px-20 py-5 mt-2 text-left flex flex-col'>{element.title}
+      <h1 className='text-xl sm:text-2xl  md:text-3xl  font-heading font-extrabold tracking-wide px-5 md:px-20 py-5 mt-2 text-left flex flex-col'>{element.title}
       <span className='text-sm text-slate-500'>By {element.author}</span>
       </h1>
       <p className='text-[16px] sm:text-[18px] tracking-wide px-5 md:px-20 first-letter:text-2xl md:first-letter:text-5xl leading-loose first-letter:ml-40 first-letter:font-extrabold'>{element.desc}</p>      
