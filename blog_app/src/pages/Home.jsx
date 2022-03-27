@@ -4,11 +4,8 @@ import { Card } from '../components/Card'
 import { Hero } from '../components/Hero'
 import {data} from '../data'
 import { useInView } from 'react-intersection-observer'
-import { useLocation } from 'react-router-dom'
 
 export const Home = () => {   
-  const URL = useLocation()
-  console.log(URL)
   const blogs = useRef()
   const [ref, inView] = useInView({
       triggerOnce:true,
@@ -21,6 +18,7 @@ export const Home = () => {
     <h1 ref={ref} className={`text-2xl md:text-3xl lg:text-4xl text-center font-heading font-extrabold transition-all duration-500 ${inView ? 'translate-y-0 opacity-100' : 'translate-y-40 opacity-0'}  font-bold p-2 border-b-4 border-secondary mt-20 tracking-wider ` }>LATEST POSTS</h1>
         {
             data.map(element=>{
+                console.log(element.id)
                 return(
                     <Card id={element.id} author={element.author} title={element.title} desc={element.desc} img={element.img} isOdd={data.indexOf(element)%2===0} key={data.indexOf(element)} />
                 )

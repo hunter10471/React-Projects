@@ -7,6 +7,7 @@ export const Card = ({title, author, img, desc, id, isOdd}) => {
     triggerOnce:true,
     rootMargin:'-100px 0px'
 })
+console.log(id)
   return (
     <div className={`flex w-screen p-10  flex-wrap items-center justify-center border-b-4 ${isOdd ? 'text-tertiary' : 'flex-row-reverse bg-tertiary text-primary '} `}>
     <img ref={ref} className={`flex-1 transition-all duration-1000 rounded-sm object-cover ${inView ? ( isOdd ? 'translate-x-0 opacity-100' : 'translate-y-0 opacity-100') :  ( isOdd ? 'translate-x-[-100%] opacity-0' : 'translate-y-40 opacity-0')}  max-h-[350px] md:max-h-[500px] max-w-[800px] min-w-[300px] shadow-md shadow-background`} src={img} alt="" />

@@ -1,25 +1,30 @@
 import React from 'react'
 import { Author } from '../components/Author'
+import { useLocation } from 'react-router-dom';
+import {data} from '../data'
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import PinterestIcon from '@mui/icons-material/Pinterest';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import MarkunreadIcon from '@mui/icons-material/Markunread';
-import img1 from '../images/pic1.jpg'
 import ad1 from '../images/ad1.jpg'
 import ad2 from '../images/ad2.jpg'
 
-export const Blog = () => {
 
-  return (
+export const Blog = () => {
+    const {pathname} = useLocation()
+    const url = parseInt(pathname.split('/')[2])
+    const element = data.find(el=> el.id === url)
+
+    return (
     <>
         <div className='mt-[8rem] p-2 flex bg-gradient-to-tl flex-wrap lg:flex-nowrap'>
       <div className='flex flex-col mb-20'>
-      <img className=' w-full max-h-[500px] object-cover object-bottom self-center rounded-sm shadow-md shadow-black' src={img1} alt="" />
-      <h1 className='text-xl sm:text-2xl  md:text-3xl  font-heading font-extrabold tracking-wide px-20 py-5 mt-2 text-left flex flex-col'>Star-Link satellites are up!
-      <span className='text-sm text-slate-500'>By Joanna Coffee</span>
+      <img className=' w-full max-h-[500px] object-cover object-bottom self-center rounded-sm shadow-md shadow-black' src={element.img} alt="" />
+      <h1 className='text-xl sm:text-2xl  md:text-3xl  font-heading font-extrabold tracking-wide px-20 py-5 mt-2 text-left flex flex-col'>{element.title}
+      <span className='text-sm text-slate-500'>By {element.author}</span>
       </h1>
-      <p className='text-[16px] sm:text-[18px] tracking-wide px-5 md:px-20 first-letter:text-2xl md:first-letter:text-5xl leading-loose first-letter:ml-40 first-letter:font-extrabold'>Using advanced satellites in a low orbit, Starlink enables video calls, online gaming, streaming, and other high data rate activities that historically have not been possible with satellite internet. Users can expect to see download speeds between 100 Mb/s and 200 Mb/s and latency as low as 20ms in most locations. Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque et totam, repellat temporibus nesciunt aliquam deleniti impedit eum vitae doloremque eius reiciendis natus quaerat consectetur odit praesentium non rem. Molestias minus hic ducimus explicabo officiis veritatis, accusantium, voluptatem placeat, accusamus earum porro impedit nobis beatae voluptates quisquam dolores quos id? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam culpa magni voluptatibus quam molestiae alias dolore! Eum laborum nemo illo sequi a? Omnis dolorum, numquam illo eaque aliquid porro ad ratione quis alias facilis exercitationem adipisci voluptate magnam beatae modi, laudantium quaerat architecto culpa rem aut accusamus. Eligendi, quae voluptate!</p>      
+      <p className='text-[16px] sm:text-[18px] tracking-wide px-5 md:px-20 first-letter:text-2xl md:first-letter:text-5xl leading-loose first-letter:ml-40 first-letter:font-extrabold'>{element.desc}</p>      
       </div>
       <div className='flex lg:flex-col items-center justify-center lg:justify-start p-5 lg:w-[60%] xl:w-[80%] flex-wrap'>
         <div className='p-4 m-10 shadow-sm rounded-lg shadow-black sm:w-full md:w-[350px] text-sm flex flex-col items-center'>
@@ -43,7 +48,7 @@ export const Blog = () => {
         </div>
       </div>
     </div>
-            <Author/>  
+            <Author img={element.profilePic} name={element.author} desc={element.authorDesc} about={element.authorAbout} />  
     </>
   )
 }
