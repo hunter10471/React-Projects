@@ -13,7 +13,7 @@ import JoinRightIcon from '@mui/icons-material/JoinRight';
 
 export const Sidebar = () => {
   return (
-    <div className=' bg-gradient-to-bl from-slate-900 to-slate-800 md:w-80 flex flex-col items-center'>
+    <div className='relative bg-gradient-to-bl from-slate-900 to-slate-800 w-60 md:w-96 flex flex-col items-center '>
         <h1 className='lg:text-2xl md:text-xl lg font-heading font-bold text-white h-fit w-[80%] text-center tracking-wide mt-5 '> <JoinRightIcon className='text-primary' fontSize='large' /><span className=' bg-clip-text text-transparent bg-gradient-to-r from-primary mr-1'>unity </span>CRM</h1>
         <div className='flex flex-col w-full mt-10 text-sm md:text-base '>
             <div className='flex items-center text-white p-5 bg-slate-800 w-full relative'>
@@ -52,8 +52,8 @@ export const Sidebar = () => {
                   <ReportProblemIcon className='mr-4' /> Issues
                 </div>
               </div>
-              <div className='mt-5 px-10 py-2 rounded-md  transition-all cursor-pointer hover:bg-slate-800 hover:text-white w-full'>
-                  <LogoutIcon className='mr-4' /> Logout
+              <div className='absolute bottom-6 flex px-8 py-4 rounded-md  transition-all cursor-pointer hover:bg-slate-800 hover:text-white w-full'>
+                  <LogoutIcon className='mr-6' /> Logout
                 </div>
             </div>
         </div>
