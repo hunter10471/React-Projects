@@ -1,10 +1,10 @@
+import { Sidebar } from "./components/Sidebar";
+
 function App() {
   return (
-    <div className="flex bg-secondary h-screen w-screen">
-      <div className="bg-white h-screen md:w-80">
-          CRM
-      </div>
-      <div className="text-white">
+    <div className="flex h-screen w-screen">
+      <Sidebar/>
+      <div className="text-secondary">
       hello world
 
       </div>
