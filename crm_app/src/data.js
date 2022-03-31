@@ -32,14 +32,6 @@ export const data = [
         img:shirt,
         revenue:"$ 125"
     },
-    {
-        title:"Reebok shoes",
-        img:shoes,
-        revenue:"$ 75"
-    },
-    {
-        title:"Livon bag",
-        img:bag,
-        revenue:"$ 50"
-    },
+
+
 ]

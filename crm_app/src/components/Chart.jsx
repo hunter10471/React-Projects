@@ -44,10 +44,10 @@ const data = [
 
 export const Chart = () => {
   return (
-      <div className='p-10 m-2 w-full h-[530px] rounded-md bg-white shadow-lg'>
+      <div className='p-10 self-end m-2 w-full h-[500px] rounded-md bg-white shadow-lg'>
           <h2 className='text-heading text-xl md:text-2xl font-semibold'>Sales Report</h2>
-      <ResponsiveContainer width="100%" height="100%">
-        <AreaChart
+        <ResponsiveContainer>
+        <AreaChart    
           data={data}
           margin={{
             top: 30,
@@ -64,7 +64,7 @@ export const Chart = () => {
           <Area type="monotone" dataKey="income" stroke="#1B262C" fill='#0F4C75' activeDot={{ r: 8 }} />
           <Area type="monotone" dataKey="expense" stroke="#0F4C75" fill='#0F4C75'  />
         </AreaChart>
-      </ResponsiveContainer>
+        </ResponsiveContainer>
           </div>
 
 
