@@ -1,28 +1,29 @@
 import React from 'react'
-import { PieChart, Pie, Cell, } from 'recharts';
+import { PieChart, Pie, Cell, Tooltip, } from 'recharts';
 
 const data = [
-    { name: 'Group A', value: 400 },
-    { name: 'Group B', value: 300 },
-    { name: 'Group C', value: 300 },
-    { name: 'Group D', value: 200 },
+    { name: 'Clothing', value: 400 },
+    { name: 'Household', value: 300 },
+    { name: 'Food items', value: 300 },
+    { name: 'Eelectronics', value: 200 },
   ];
   const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
 export const Piechart = () => {
   return (
       <div className='flex-col relative flex max-w-[500px] items-center bg-white shadow-lg self-start m-5 p-6 rounded-md'>
-          <h1 className='text-2xl tracking-wide font-semibold font-heading'>Most bought categories</h1>
-    <h2 className='absolute top-[35%] left-44  text-xl font-bold'>$1,247,4302</h2>
+          <h1 className='text-xl mt-5 tracking-wide font-semibold font-heading'>Most bought categories</h1>
+    <h2 className='absolute top-[38%] left-[11rem] tracking-wide  text-lg font-bold'>$1,247,4302</h2>
       <PieChart width={250} height={250} >
+        <Tooltip/>
         <Pie
           data={data}
           cx={100}
           cy={120}
-          innerRadius={80}
-          outerRadius={100}
+          innerRadius={70}
+          outerRadius={80}
           fill="#8884d8"
-          paddingAngle={10}
+          paddingAngle={5}
           dataKey="value"
         >
           {data.map((entry, index) => (

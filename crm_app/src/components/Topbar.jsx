@@ -1,13 +1,11 @@
 import React from 'react'
-import MenuIcon from '@mui/icons-material/Menu';
 import NotificationsIcon from '@mui/icons-material/NotificationsNone';
 import SettingsIcon from '@mui/icons-material/Settings';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 export const Topbar = () => {
   return (
-    <div className='w-[80vw] px-6 py-3 shadow-md flex justify-between items-center bg-white'>
-        <MenuIcon className='cursor-pointer' />
+    <div className='w-full px-6 py-3 shadow-md flex justify-end items-center bg-white'>
         <div className='flex items-center'>
             <div className='relative before:w-3 before:h-3 before:absolute before:bg-primary before:rounded-[50%] '>
             <NotificationsIcon className='mr-5  cursor-pointer' />
