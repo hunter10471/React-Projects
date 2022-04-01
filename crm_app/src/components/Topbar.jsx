@@ -5,7 +5,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 export const Topbar = () => {
   return (
-    <div className='w-full px-6 py-3 shadow-md flex justify-end items-center bg-white'>
+    <div className='w-full z-10 px-6 py-3 shadow-md flex justify-end items-center bg-white'>
         <div className='flex items-center'>
             <div className='relative before:w-3 before:h-3 before:absolute before:bg-primary before:rounded-[50%] '>
             <NotificationsIcon className='mr-5  cursor-pointer' />

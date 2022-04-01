@@ -6,6 +6,7 @@ import { Table } from "./components/Table";
 import { Topbar } from "./components/Topbar";
 import { TopCard } from "./components/TopCard";
 import MenuIcon from '@mui/icons-material/Menu'
+import { Reviews } from "./components/Reviews";
 
 
 function App() {
@@ -26,7 +27,10 @@ function App() {
           <TopCard title={"Total Users"} amount={"2,40,405"} percentage={45.65} sign={"+"}  />
             </div>
           <Chart/>
+          <div className="flex">
           <Piechart/>
+          <Reviews/>
+          </div>
           </div>
           <div className="overflow-auto flex flex-1 h-fit max-h-[600px] min-w-[400px] mt-7 mx-6 p-5 shadow-lg rounded-md flex-col bg-white">
             <h2 className="text-xl tracking-wide font-bold font-heading  w-full rounded-t px-10 mt-5 my-5">Top trending products</h2>

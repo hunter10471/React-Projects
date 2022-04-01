@@ -4,9 +4,9 @@ import { data } from '../data'
 export const Table = () => {
   return (
     <table className='w-full h-full max- text-secondary table-fixed '>
-        <tr className=' p-2 w-96 h-10 border-b-2 text-lg '> 
-            <th colSpan={2} className='p-2 font-medium'>Product</th>
-            <th className='p-2 font-medium'>Revenue</th>
+        <tr className='sticky -top-5 bg-white  w-96 h-10 border-b-2 text-lg '> 
+            <th colSpan={2} className='p-5 font-medium'>Product</th>
+            <th className='p-5 font-medium'>Revenue</th>
         </tr>
             {
                 data.map(el=>{

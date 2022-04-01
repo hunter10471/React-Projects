@@ -21,7 +21,7 @@ export const Piechart = () => {
           cx={100}
           cy={120}
           innerRadius={70}
-          outerRadius={80}
+          outerRadius={85}
           fill="#8884d8"
           paddingAngle={5}
           dataKey="value"
