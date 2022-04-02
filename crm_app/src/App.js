@@ -7,6 +7,8 @@ import { Topbar } from "./components/Topbar";
 import { TopCard } from "./components/TopCard";
 import MenuIcon from '@mui/icons-material/Menu'
 import { Reviews } from "./components/Reviews";
+import { HorizontalChart } from "./components/HorizontalChart";
+import { Orders } from "./components/Orders";
 
 
 function App() {
@@ -27,16 +29,24 @@ function App() {
           <TopCard title={"Total Users"} amount={"2,40,405"} percentage={45.65} sign={"+"}  />
             </div>
           <Chart/>
-          <div className="flex">
-          <Piechart/>
-          <Reviews/>
           </div>
-          </div>
-          <div className="overflow-auto flex flex-1 h-fit max-h-[600px] min-w-[400px] mt-7 mx-6 p-5 shadow-lg rounded-md flex-col bg-white">
+          <div className="overflow-auto flex flex-1 max-h-[650px] min-w-[400px] mt-7 mx-6 p-5 shadow-lg rounded-md flex-col bg-white">
             <h2 className="text-xl tracking-wide font-bold font-heading  w-full rounded-t px-10 mt-5 my-5">Top trending products</h2>
           <Table/>
           </div>
         </div>
+          <div className="flex items-center max-h-[600px]">
+          <Piechart/>
+          <Reviews/>
+          </div>
+          <div className="w-[95%] m-10 rounded-md shadow-lg bg-white p-10 mx-auto min-w-[300px] h-[500px]">
+            <h1 className="text-xl mb-5 font-heading font-semibold ">Yearly Sales</h1>
+            <HorizontalChart/>
+          </div>
+          <div className="w-[95%] m-10 overflow-auto rounded-md shadow-lg bg-white p-10 mx-auto min-w-[300px]">
+            <h1 className="text-xl mb-5 font-heading font-semibold ">Orders</h1>
+            <Orders/>
+          </div>
       </div>
     </div>
     </>

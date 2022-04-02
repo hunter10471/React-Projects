@@ -45,7 +45,7 @@ const data = [
 export const Chart = () => {
   return (
       <div className='p-10 self-end m-2 w-full h-[500px] rounded-md bg-white shadow-lg'>
-          <h2 className='text-heading text-xl md:text-2xl font-semibold'>Sales Report</h2>
+          <h2 className='text-heading font-heading text-xl md:text-2xl font-semibold'>Sales Report</h2>
         <ResponsiveContainer>
         <AreaChart    
           data={data}

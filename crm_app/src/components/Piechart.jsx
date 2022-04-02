@@ -11,16 +11,15 @@ const data = [
 
 export const Piechart = () => {
   return (
-      <div className='flex-col relative flex max-w-[500px] items-center bg-white shadow-lg self-start m-5 p-6 rounded-md'>
+      <div className='flex-col relative flex min-w-[300px] items-center bg-white shadow-lg self-start m-10 p-6 rounded-md'>
           <h1 className='text-xl mt-5 tracking-wide font-semibold font-heading'>Most bought categories</h1>
-    <h2 className='absolute top-[38%] left-[11rem] tracking-wide  text-lg font-bold'>$1,247,4302</h2>
       <PieChart width={250} height={250} >
         <Tooltip/>
         <Pie
           data={data}
           cx={100}
           cy={120}
-          innerRadius={70}
+          innerRadius={60}
           outerRadius={85}
           fill="#8884d8"
           paddingAngle={5}

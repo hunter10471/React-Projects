@@ -10,7 +10,8 @@ import PaidIcon from '@mui/icons-material/Paid';
 import ReportProblemIcon from '@mui/icons-material/ReportProblem';
 import ArticleIcon from '@mui/icons-material/Article';
 import LockIcon from '@mui/icons-material/Lock';
-
+import DownloadIcon from '@mui/icons-material/Download';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 
 export const data = [
@@ -136,5 +137,72 @@ export const pages = [
     {
         title:" Issues",
         Icon:<ReportProblemIcon className='mr-4' />,
+    },
+]
+
+
+export const tableData = [
+    {
+        id:1,
+        name:'Trevos Shirts',
+        client:'Maxim textiles',
+        createdAt:'12-03-22',
+        status:'completed',
+        price:'$3500',
+        icon:<span className='flex justify-around cursor-pointer text-slate-400'><DownloadIcon/><DeleteIcon/></span>,
+    },
+    {
+        id:2,
+        name:'Denim jeans',
+        client:'Jeans atheltico',
+        createdAt:'18-07-21',
+        status:'cancelled',
+        price:'$1200',
+        icon:<span className='flex justify-around cursor-pointer text-slate-400'><DownloadIcon/><DeleteIcon/></span>,
+    },
+    {
+        id:3,
+        name:'Pizza cheese',
+        client:'Cheddar brothers',
+        createdAt:'25-01-22',
+        status:'completed',
+        price:'$4300',
+        icon:<span className='flex justify-around cursor-pointer text-slate-400'><DownloadIcon/><DeleteIcon/></span>,
+    },
+    {
+        id:4,
+        name:'Proxima medicines',
+        client:'PharmaTech.',
+        createdAt:'02-08-21',
+        status:'in process',
+        price:'$3500',
+        icon:<span className='flex justify-around cursor-pointer text-slate-400'><DownloadIcon/><DeleteIcon/></span>,
+    },
+    {
+        id:5,
+        name:'Reebok shoes',
+        client:'Reebok',
+        createdAt:'12-02-22',
+        status:'completed',
+        price:'$7500',
+        icon:<span className='flex justify-around cursor-pointer text-slate-400'><DownloadIcon/><DeleteIcon/></span>,
+    },
+    {
+        id:5,
+        name:'Proxima medicines',
+        client:'PharmaTech.',
+        createdAt:'02-08-21',
+        status:'in process',
+        price:'$3500',
+        icon:<span className='flex justify-around cursor-pointer text-slate-400'><DownloadIcon/><DeleteIcon/></span>,
+    },
+    {
+        id:6,
+        name:'Denim jeans',
+        client:'Jeans atheltico',
+        createdAt:'18-07-21',
+        status:'cancelled',
+        price:'$1200',
+        icon:<span className='flex justify-around cursor-pointer text-slate-400'><DownloadIcon/><DeleteIcon/></span>,
     },
 ]
