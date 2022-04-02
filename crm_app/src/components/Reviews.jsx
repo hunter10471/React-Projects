@@ -3,7 +3,7 @@ import React from 'react'
 
 export const Reviews = () => {
   return (
-    <div className='flex overflow-auto before:bottom-0 before:bg-gradient-to-t from w rounded-md max-h-[500px] min-w-[350px] mx-10 shadow-lg p-2 flex-col bg-white'>
+    <div className='flex flex-1 overflow-auto before:bottom-0 rounded-md max-h-[500px] min-w-[350px] mx-10 shadow-lg p-2 flex-col bg-white'>
         <h1 className='text-xl px-10 py-5 font-heading font-semibold'>Latest Ratings & Reviews</h1>
         <div className='border-b-2 p-5'>
         <div className='flex justify-between whitespace-nowrap items-center'>

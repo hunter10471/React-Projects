@@ -1,6 +1,7 @@
 import React from 'react'
 import { PieChart, Pie, Cell, Tooltip, } from 'recharts';
 
+
 const data = [
     { name: 'Clothing', value: 400 },
     { name: 'Household', value: 300 },
@@ -11,7 +12,7 @@ const data = [
 
 export const Piechart = () => {
   return (
-      <div className='flex-col relative flex min-w-[300px] items-center bg-white shadow-lg self-start m-10 p-6 rounded-md'>
+      <div className='flex-col flex-1 relative flex min-w-[350px] items-center bg-white shadow-lg self-start m-10 p-6 rounded-md'>
           <h1 className='text-xl mt-5 tracking-wide font-semibold font-heading'>Most bought categories</h1>
       <PieChart width={250} height={250} >
         <Tooltip/>

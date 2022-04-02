@@ -2,10 +2,12 @@ import HomeIcon from '@mui/icons-material/Home';
 import LogoutIcon from '@mui/icons-material/Logout';
 import JoinRightIcon from '@mui/icons-material/JoinRight';
 import { administration,pages } from '../data';
+import { useEffect, useState } from 'react';
 
 export const Sidebar = ({nav}) => {
+  
   return (
-    <div className={`fixed h-screen bg-gradient-to-bl from-slate-900 transition-all duration-200 ease-out to-slate-800 ${nav ? 'w-[20vw]' : 'w-[65px]'} flex flex-col items-center `}>
+    <div className={`fixed h-full bg-gradient-to-bl from-slate-900 transition-all duration-200 ease-out to-slate-800 ${nav ? 'w-[20vw]' : 'w-[65px]'} flex flex-col items-center `}>
         <h1 className='lg:text-2xl whitespace-nowrap md:text-xl lg font-heading font-bold text-white h-fit w-[80%] text-center tracking-wide mt-5 '> <JoinRightIcon className='text-primary' fontSize='large' />{nav ? (<span className=' bg-clip-text text-transparent bg-gradient-to-r from-primary mr-1'>unity <span className='text-white'>CRM</span> </span>) : ''}</h1>
         <div className='flex flex-col w-full mt-10 text-sm md:text-base '>
             <div className='flex items-center text-white p-5 bg-slate-800 w-full relative'>
@@ -49,3 +51,5 @@ export const Sidebar = ({nav}) => {
     </div>
   )
 }
+
+
