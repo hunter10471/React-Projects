@@ -14,7 +14,7 @@ body {
 }
 
 ::-webkit-scrollbar{
-  width: 7px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-thumb{
@@ -28,5 +28,5 @@ body {
 
 table{
   border-collapse: separate;
-  border-spacing: 0 15px;
+  border-spacing:   0 15px;
 }

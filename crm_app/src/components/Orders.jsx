@@ -3,7 +3,7 @@ import { tableData } from '../data'
 
 export const Orders = () => {
   return (
-    <table className='w-full h-full '>
+    <table className='h-full w-full'>
         <tr>
             <th>No.</th>
             <th>Product Name</th>

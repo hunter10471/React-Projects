@@ -3,6 +3,9 @@
 This is a react-tailwind Customer Relationship Management **(CRM)** app. The application is a *UI* depicting how an admin dashboard for a
 e-commerce website would provide stake-holders an interface to observe the **statistics** and current **state** of the website.
 
+#### The website can be viewed at 
+ :link: [stupendous-melba-7842ae](https://stupendous-melba-7842ae.netlify.app/)
+
 Icons for the website has been taken by [Material-UI](www.mui.com)
 
 ## :point_down: Glimpses of the application
