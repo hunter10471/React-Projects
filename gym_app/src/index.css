@@ -13,3 +13,29 @@
 body{
     background-color: #0f0f0f ;
 }
+
+
+html{
+    scroll-behavior: smooth;
+}
+
+:target:before {
+    content: "";
+    display: block;
+    height:  80px;
+    margin: -100px 0 0;
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track{
+    background-color: #000103;
+  }
+  
+  ::-webkit-scrollbar-thumb{
+    background-color:#41AB76;
+    border-radius: 10px;
+  }
+  
