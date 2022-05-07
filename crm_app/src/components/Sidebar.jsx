@@ -1,54 +1,62 @@
-import HomeIcon from '@mui/icons-material/Home';
-import LogoutIcon from '@mui/icons-material/Logout';
+import React, { useState } from 'react'
 import JoinRightIcon from '@mui/icons-material/JoinRight';
-import { administration,pages } from '../data';
+import { motion } from 'framer-motion';
+import data from '../sideBarData';
 
-export const Sidebar = ({nav}) => {
-  
-  return (
-    <div className={` fixed h-full bg-gradient-to-bl from-slate-900 transition-all duration-200 ease-out to-slate-800 ${nav ? 'w-[20vw]' : 'w-[65px]'} flex flex-col items-center `}>
-        <h1 className='lg:text-2xl whitespace-nowrap md:text-xl lg font-heading font-bold text-white h-fit w-[80%] text-center tracking-wide mt-5 '> <JoinRightIcon className='text-primary' fontSize='large' />{nav ? (<span className=' bg-clip-text text-transparent bg-gradient-to-r from-primary mr-1'>unity <span className='text-white'>CRM</span> </span>) : ''}</h1>
-        <div className='flex flex-col w-full mt-10 text-sm md:text-base '>
-            <div className='flex items-center text-white p-5 bg-slate-800 w-full relative'>
-                <span className='flex items-center justify-around'><HomeIcon className='mr-3'/>{ nav ? 'Dashboard' : ''}</span>
-                <span className={`absolute ${nav ? '' : 'hidden'} right-5 justify-around py-1 px-6 rounded-lg bg-blue-600`}>5</span>
-            </div>
-            <div className='flex text-slate-400 flex-col justify-between'>
-              <div className={`${nav ? 'm-10' : 'm-5'}`}>
-                <h2 className={`font-heading ${nav ? '' : 'hidden'}`}>
-                  ADMINISTRATION
-                </h2>
-                  {
-                    administration.map(el=>{ return (
-                      <div className={`mt-5 ${nav ? 'px-5' : ''} py-2 rounded-md  transition-all cursor-pointer hover:bg-slate-800 hover:text-white w-full`}>
-                      <span >{el.Icon}</span>
-                      <span className={`${nav ? '' : 'hidden'}`} >{el.title}</span>
-                      </div>
-                    )
-                      
-                    })
-                  }
-              </div>
-              <div className={`${nav ? 'm-10' : 'm-5'}`}>
-                <h2 className={`font-heading ${nav ? '' : 'hidden'}`}>
-                  PAGES
-                </h2>
-                { pages.map(el=>{return(
-                  <div className={`mt-5 ${nav ? 'px-5' : ''} py-2 rounded-md  transition-all cursor-pointer hover:bg-slate-800 hover:text-white w-full`}>
-                  <span>{el.Icon}</span>
-                  <span className={`${nav ? '' : 'hidden'}`}>{el.title}</span>
-                </div>
-                    )
-                })
-                }
-              </div>
-              <div className={`absolute bottom-6 flex ${nav ? 'px-8' : 'px-5'} py-4 rounded-md  transition-all cursor-pointer hover:bg-slate-800 hover:text-white w-full`}>
-                  <LogoutIcon className='mr-6' /> {nav ? 'Logout' : ''}
-                </div>
-            </div>
-        </div>
-    </div>
-  )
+
+const textAnimation = {
+    initial:{
+        opacity:0,
+        x:-200
+    },
+    animate:{
+        opacity:1,
+        x:0,
+        transition:{
+            duration:0.5,
+            ease:'backInOut'
+        },
+    exit:{
+        opacity:0,
+        x:-200,
+        transition:{
+            duration:0.5,
+            ease:'backInOut'
+        },
+    }
+}
 }
 
 
+
+
+export const Sidebar = () => {
+    const [nav, setNav] = useState(false)
+
+    const Item = ({icon, text, highlighted = false}) => {
+       return <div className={`flex items-center cursor-pointer ${highlighted &&'bg-primaryLighter text-white font-semibold'} ${text==='Search' && 'mb-10'} ${text==='Logout' && 'mt-10'}  my-3 font-medium text-gray-200 transition-all hover:font-semibold hover:text-white hover:bg-primaryLighter p-2 rounded-lg`}>
+        {icon}
+        {nav &&
+        <span className='mt-1'>
+            {text}
+        </span> 
+        }
+    </div>
+    }
+    
+    return (
+    <div className={`fixed top-0 bg-gradient-to-br from-primary to-primaryLight h-screen transition-all ${nav ? 'w-[250px]' : 'w-[55px]'} px-2 py-5`}>
+        <h1 className='text-3xl font-heading font-thin flex items-center text-white mt-5 mb-10'><JoinRightIcon onClick={()=>setNav(!nav)} className='p-1 bg-white text-primary rounded-xl cursor-pointer ' sx={{fontSize:35,marginRight:0.5}} />
+        {nav && 
+            <motion.span variants={textAnimation} initial='initial' animate='animate' exit='exit' >
+            Unity
+            </motion.span>
+        }
+        </h1>
+          { data.map(el => {
+            return <Item text={el.label} icon={el.icon} highlighted={el.highlighted} />
+        })}
+
+    </div>
+  )
+}
