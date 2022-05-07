@@ -18,7 +18,7 @@ export const ExcerciseCard = ({img, title, desc, time, cal}) => {
         />
         <CardContent className='text-secondary' >
           <Typography  gutterBottom variant="h5" component="div">
-          <div className='relative'><span className='before:absolute before:bg-primary before:w-10 before:h-1 before:-bottom-[5px]'>{title}</span> </div>
+          <div className='relative'><span className='before:absolute before:bg-primary before:w-4 before:h-[2px] before:-bottom-[5px]'>{title}</span> </div>
           </Typography>
          
           <Typography variant="body1" color="text.secondary">
