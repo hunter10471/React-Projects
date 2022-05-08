@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import JoinRightIcon from '@mui/icons-material/JoinRight';
 import { motion } from 'framer-motion';
-import data from '../sideBarData';
-
+import Tooltip from '@mui/material/Tooltip';
+import {sidebarData} from '../Data';
 
 const textAnimation = {
     initial:{
@@ -32,31 +32,49 @@ const textAnimation = {
 
 export const Sidebar = () => {
     const [nav, setNav] = useState(false)
-
-    const Item = ({icon, text, highlighted = false}) => {
-       return <div className={`flex items-center cursor-pointer ${highlighted &&'bg-primaryLighter text-white font-semibold'} ${text==='Search' && 'mb-10'} ${text==='Logout' && 'mt-10'}  my-3 font-medium text-gray-200 transition-all hover:font-semibold hover:text-white hover:bg-primaryLighter p-2 rounded-lg`}>
-        {icon}
+    const [highlighted, setHighlighted] = useState('')
+    useEffect(()=>{
+        const closeNavOnOutSideClick = () =>{
+            if(nav){
+                document.addEventListener('click',(e)=>{
+                    var container = document.getElementById('sidebar')
+                    if(!container.contains(e.target)){
+                        setNav(false)
+                    }
+                })
+            }
+        }
+        closeNavOnOutSideClick();
+    },[nav])
+    const Item = ({icon, text}) => {
+       return <button onClick={()=>setHighlighted(text)} className={`flex items-center cursor-pointer w-full focus:bg-primaryLighter focus:text-white focus:font-semibold ${highlighted === text ?  'bg-primaryLighter text-white font-semibold' : 'text-gray-300 font-medium'} ${text==='Logout' && 'mt-10'}  my-3 transition-all hover:font-semibold hover:text-white hover:bg-primaryLighter p-[6px] md:p-2 rounded-lg`}>
+        <Tooltip title={text} placement='right' arrow >
+                {icon}
+        </Tooltip>
         {nav &&
-        <span className='mt-1'>
+        <span>
             {text}
         </span> 
         }
-    </div>
+    </button>
     }
     
     return (
-    <div className={`fixed top-0 bg-gradient-to-br from-primary to-primaryLight h-screen transition-all ${nav ? 'w-[250px]' : 'w-[55px]'} px-2 py-5`}>
-        <h1 className='text-3xl font-heading font-thin flex items-center text-white mt-5 mb-10'><JoinRightIcon onClick={()=>setNav(!nav)} className='p-1 bg-white text-primary rounded-xl cursor-pointer ' sx={{fontSize:35,marginRight:0.5}} />
+    <div id='sidebar' className={`flex flex-col z-[20] overflow-y-scroll lg:overflow-y-visible fixed top-0 bg-gradient-to-br from-primary to-primaryLight h-screen transition-all ${nav ? 'w-[250px]' : 'w-[55px]'} px-2 py-5`}>
+        <h1 className='text-3xl font-heading font-thin flex items-center text-white mt-5 mb-10'><JoinRightIcon onClick={()=>setNav(!nav)} className='p-1 transition-all hover:scale-105 bg-white text-primary rounded-xl cursor-pointer ' sx={{fontSize:38,marginRight:0.5}} />
         {nav && 
             <motion.span variants={textAnimation} initial='initial' animate='animate' exit='exit' >
             Unity
             </motion.span>
         }
         </h1>
-          { data.map(el => {
+          { sidebarData.map(el => {
             return <Item text={el.label} icon={el.icon} highlighted={el.highlighted} />
         })}
-
+        <span className={`${nav ? 'flex' : 'hidden'} flex-col w-full h-full justify-end whitespace-nowrap `}>
+        <h3 className='text-xs font-bold text-white'>© 2002-2022 Unity</h3>
+        <span className='text-[10px] text-gray-400 w-[80%] overflow-clip '>All business statistics tracked <br /> at one place.</span>
+        </span>
     </div>
   )
 }
