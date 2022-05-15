@@ -2,7 +2,9 @@
 
 Hey fellas, i've created this application that is a simple UI demo of a technical blog 👨‍💻 The app itself has been deployed on netlify on the following link:
 
-🔗 https://darling-donut-0dfc1b.netlify.app
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5811f799-0387-44b8-bb16-15f44256c1f9/deploy-status)](https://app.netlify.com/sites/heartfelt-moonbeam-54d1f3/deploys)
+
+🔗 https://heartfelt-moonbeam-54d1f3.netlify.app
 
 ### Tech I've used:
 
