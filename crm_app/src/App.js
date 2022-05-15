@@ -4,6 +4,7 @@ import { UserSection } from "./components/UserSection";
 import { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Spinner } from './components/Spinner';
+import { AnimatePresence } from "framer-motion";
 
 
 
@@ -15,6 +16,7 @@ const Products = lazy(()=>import('./pages/Products'));
 
 function App() {
   return (
+
       <Router>
     <div className="w-full h-screen z-[10] text-[#1a1d1d]">
       <Sidebar />
@@ -22,12 +24,14 @@ function App() {
       <div className="w-[70%] border-r-2 my-5 ml-[55px] z-[10] p-8">
       <SearchBar/>
         <Suspense fallback={<Spinner/>} >
+          <AnimatePresence exitBeforeEnter >
     <Routes>
         <Route path='/' element={<Dashboard/>} />
         <Route path='/Orders' element={<Orders/>} />
         <Route path='/Users' element={<Users/>} />
         <Route path='/Products' element={<Products/>} /> 
     </Routes>
+          </AnimatePresence>
         </Suspense>
       </div>
       <UserSection/>

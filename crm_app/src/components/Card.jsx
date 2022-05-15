@@ -20,10 +20,10 @@ export const Card = ({icon,iconColor,money,loss,profit,title,classes}) => {
                </>}
            </span>
        </div>
-       <h2 className='text-2xl font-semibold my-2 tracking-wider'>
+       <h2 className='text-2xl font-semibold font-heading my-2 tracking-wider'>
            {money}
        </h2>
-       <h3 className='text-base font-semibold mt-2 text-gray-400'>
+       <h3 className='text-base font-semibold font-heading  mt-2 text-gray-400'>
            {title}
        </h3>
     </div>
