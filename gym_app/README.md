@@ -2,9 +2,10 @@
 
 Greetings everyone, Recently developed UI for a local Gym web-app  👨‍💻 The app itself has been deployed on netlify on the following link:
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/80f967a4-0a78-462d-9e23-4ca9cc8b02be/deploy-status)](https://app.netlify.com/sites/ephemeral-lamington-586ba9/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8dd16bc9-1d2b-48cd-abbe-1356a046e877/deploy-status)](https://app.netlify.com/sites/euphonious-wisp-49a050/deploys)
 
-🔗 https://ephemeral-lamington-586ba9.netlify.app
+🔗 https://euphonious-wisp-49a050.netlify.app
+
 
 ### Tech I've used:
 
